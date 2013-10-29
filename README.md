@@ -1,6 +1,6 @@
-# Black Techies home UI developemnt environment
+# Social interest group UI developemnt environment
 
-This is the dev environment for the Black Techies website. Will include creative elements, and html/js/css components.
+This is the dev environment for a social interest website. Will include creative elements, and html/js/css components.
 Based on [FireShell](http://getfireshell.com/)
 
 Requirements:
