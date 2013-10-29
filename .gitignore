@@ -1,0 +1,13 @@
+# a social techshare website
+# http://www.massforward.com
+# Alvaro Muir, @alvaromuir
+
+node_modules
+src/components
+.DS_Store
+.tmp
+.sass-cache
+style.min.css
+style.unprefixed.css
+style.prefixed.css
+scripts.min.js

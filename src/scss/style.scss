@@ -1,0 +1,623 @@
+@import "../components/foundation/scss/foundation";
+@import "../components/font-awesome/scss/font-awesome";
+@import url("http://fonts.googleapis.com/css?family=Roboto:100+Josefin+Slab:100");
+
+/* --------------------------
+  * Global stuff
+  * -------------------------
+  */
+
+  $red: #e52928;
+  $brick: #e44826;
+  $black: #2e2e2e;
+  $charcoal: #443f3f;
+  $carbon: #383b38;
+  $green: #95b768;
+  $kelly: #48861f;
+
+
+  $tan: #f2f2ea;
+  $khaki: #eaeae2;
+  $taupe: #c8c8bf;
+  $cement: #aeaea8;
+
+  $white: #f9f9f9;
+  $silver: #eaeaea;
+
+
+  $blue: #4a7fba;
+  $yellow: #fafbaf;
+
+
+  * {margin:0;padding:0;} 
+
+  body, html {
+    height: 100%;
+  }
+
+  .row {
+    min-width: 100% !important;
+    float: left;
+    min-height: 100% !important;
+    height: 100%;
+  }
+
+  .clearfix {
+    clear: both;
+  }
+
+  @mixin dev {
+    outline: 1px solid #b8f137;
+  }
+
+  @mixin thin-sans {
+    font-family: 'Roboto', Verdana, sans;
+    font-weight: 100;
+  }
+
+  @mixin thin-serif {
+    font-family: 'Josefin Slab', serif;
+    font-weight: 100;
+  }
+
+  @mixin border-top($px, $color) {
+    border-top: $px solid $color;
+  }
+
+  @mixin border-left($px, $color) {
+    border-left: $px solid $color;
+  }
+
+  @mixin red {
+    color: $brick;
+  }
+
+  @mixin red-back {
+    background: $brick;
+  }
+
+  @mixin green{
+    color: $green;
+  }
+
+  @mixin green-back {
+    background: $green;
+  }
+
+  @mixin black {
+    color: $black;
+  }
+
+  @mixin black-back {
+    background: $black;
+    color: $white;
+  }
+
+  @mixin yellow {
+    color: $yellow;
+  }
+
+  @mixin yellow-back {
+    background: $yellow;
+    color: $taupe;
+  }
+
+  @mixin blue{
+    color: $blue;
+  }
+
+  @mixin cement {
+    color: $cement;
+  }
+
+  @mixin blue-back {
+    background: $blue;
+  }
+
+  @mixin white-back {
+    background: $white;
+  }
+
+  @mixin avatar($size, $radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -khtml-border-radius: $radius;
+    border-radius: $radius;
+    width: $size;
+    height: $size;
+
+    // -webkit-box-shadow: 0 0 0 3px #fff, 0 0 0 4px #999, 0 2px 5px 4px rgba(0,0,0,.2);
+    // -moz-box-shadow: 0 0 0 3px #fff, 0 0 0 4px #999, 0 2px 5px 4px rgba(0,0,0,.2);
+    // box-shadow: 0 0 0 3px #fff, 0 0 0 4px #999, 0 2px 5px 4px rgba(0,0,0,.2);
+  }
+
+
+/* --------------------------
+  * Main Navigation Bar Styles
+  * -------------------------
+  */
+
+    .top-bar.pre-nav {
+      background: $black;
+      height: 50px;
+     .logo {
+        width: 110px;
+        margin: 3px 0 0 10px;
+      }
+      .top-bar-section {
+        ul {
+          background: $black;
+          color: $charcoal;
+        }
+
+        ul.right {
+          margin-bottom: 0;
+          padding-bottom: 0;
+        }
+        ul.right li i {
+          margin: 15px 0 0 5px;
+        }
+
+        li a {
+          background: $black;
+          @include thin-sans;
+        }
+        li a:hover {
+          color: $brick;
+          background: $charcoal;
+        }
+
+        li.user-drop {
+          width: 180px;
+        }
+        .user-avatar img {
+          @include avatar(35px, 50%);
+            float: left;
+            position: relative;
+            margin: .3em 1em 0 .5em;
+          }
+
+        .search {
+          width: 90%;
+          margin: 0 auto;
+        }
+      }
+    }
+
+/* --------------------------
+  * Left Nav
+  * -------------------------
+  */
+
+    .columns.left-nav {
+      
+    }
+
+    .left-nav {
+      background: $khaki;
+    }
+
+    .side-nav {
+      @include thin-sans;
+      li {
+        text-align: right;
+        height: 30px;
+        .header {
+          font-weight: bolder;
+          text-align: center;
+          color: $charcoal;
+        }
+        .red {
+            @include border-left(5px, $brick);
+        }
+        .green {
+          @include border-left(5px, $green);
+        }
+        .blue {
+          @include border-left(5px, $blue);
+        }
+        .yellow {
+          @include border-left(5px, $yellow);
+        }
+        a {
+          color: $cement;
+          padding: 5px 5px 0 0;
+          height: 100%;
+          .process {
+            i {
+              margin-left: 10px;
+              font-size: 1.4em;
+            }
+            [class^="icon-"].pull-left {
+                margin-right: 0;
+              }
+          }
+        }
+        a:hover {
+          background: $tan;
+          color: $taupe;
+        }
+
+        .radius.label {
+          width: 25px;
+          border: 0;
+          padding: .3em .3em;
+          margin-left: .5em;
+        }
+
+        .radius.red.label {
+          @include red-back;
+        }
+
+        .radius.green.label {
+          @include green-back;
+        }
+
+        .radius.black.label {
+          @include black-back;
+        }
+
+        .radius.yellow.label {
+          @include yellow-back;
+        }
+
+        .radius.blue.label {
+          @include blue-back;
+        }
+      }
+    }
+
+  .side-nav li.divider {
+    border-top-color: $taupe;
+  }
+
+
+/* --------------------------
+  * Main Area
+  * -------------------------
+  */
+
+    main {
+      min-height: 100%;
+      height: auto !important;
+      height: 100%;
+      margin: 0 auto -4em;
+    }
+
+    .main {
+      padding: 0;
+      height: 100%
+    }
+
+/* --------------------------
+  * Content nav
+  * -------------------------
+  */
+
+    // [class*="column"] + [class*="column"]:last-child {
+    //   float:  left;
+    // }
+
+    .main {
+      .content-nav {
+        background: $khaki;
+        width: 100%;
+        padding: 10px 20px;
+        @include border-top(5px, $brick);
+      }
+
+      .sub-nav {
+        dd {
+          @include thin-serif;
+          margin-right: 20px;
+          a {
+           color: $cement;
+          }
+          a:hover {
+            text-decoration: underline;
+          }
+        }
+
+        dd.active  a {
+          color: $white
+        }
+
+        dd.active a:hover {
+          cursor: pointer;
+          text-decoration: none;
+        }
+
+      }
+
+      .sub-nav .active a {
+        @include blue-back;
+      }
+    }
+/* --------------------------
+  * Primary Content
+  * -------------------------
+  */
+
+    .primary-content {
+      @include white-back;
+      @include border-top(1px, $taupe);
+      @include border-left(1px, $taupe);
+      @include thin-sans;
+      color: $black;
+      padding: 10px;
+      min-height: 100%;
+      background-color: $white;
+    }
+  
+/* --------------------------
+  * Right Bar
+  * -------------------------
+  */
+
+    .right-bar {
+      background: $carbon;
+      padding: 0;
+
+      .friends-nav {
+        @include border-top(5px, $brick);
+        // border-bottom: 1px solid $taupe;
+        background: $green;
+        dl {
+          margin: 0;
+          padding: 0;
+          dd {
+            width: 20%;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            font-size: larger;
+            a {
+              color: $white;
+            }
+            a:hover {
+              color: $charcoal;;
+            }
+          }
+        }
+      }
+
+      .sub-nav dd.active {
+        background: $black;
+        a {
+          background: none;
+          border-radius: 0;
+        }
+        a:hover {
+          color: $white;
+        }
+      }
+
+
+      ul.side-nav.friends-list {
+        width: 100%;
+        h5 {
+          text-align: center;
+          color: $taupe;
+        }  
+        li.friend {
+          height: 100%;
+          width: 100%;
+          float: left;
+          margin: 0 10px 0 0;
+          padding: 10px 0;
+          clear: right;
+
+          a {
+            color: $taupe;
+          }
+
+          a:hover {
+            background: none;
+          }
+
+          .friend-status {
+            float: left;
+            height: 50px;
+            margin: 0 10px 0 10px;
+            padding: 0;
+            text-align: left;
+            a  {
+              float: left;
+              clear: left;
+              margin: 0;
+              padding: 0;
+              line-height: 1em;
+              height: 1em;
+              width: 1em;
+              text-align: center;
+              .online {
+                @include green;
+              }
+              .offline {
+                @include red;
+              }
+              .available {
+                @include blue;
+              }
+              .unavailable {
+                @include yellow;
+              }
+            }
+          }
+
+          .user-avatar {
+            float: left;
+            padding: 0;
+            margin: 0;
+              img {
+              @include avatar(35px, 10%);
+              margin: -5px 0 10px 0;
+              padding: 0;
+            }
+            a.offline img {
+              filter: alpha(opacity=20);
+              -moz-opacity: 0.2;
+              -khtml-opacity: 0.2;
+              opacity: 0.2;
+            }
+            a.offline img:hover {
+              filter: alpha(opacity=100);
+              -moz-opacity: 1;
+              -khtml-opacity: 1;
+              opacity: 1;
+            }
+          }
+
+          .friend-meta {
+            float: left;
+            padding: 0;
+            margin: 0;
+            .offline {
+              @include black;
+            }
+            .display-name {
+              float: left;
+              text-align: left;
+              width: 100%;
+              padding: 0;
+              margin: -10px 0 0 0;
+            }
+            .display-name:hover {
+              color: $yellow;
+              text-decoration: underline;
+            }
+            dl.sub-nav.friend-contact {
+              float: left;
+              padding: 0;
+              margin: 0 0 0 -5px;
+              dd {
+                padding: 0;
+                line-height: 1em;
+                a:hover {
+                  color: $blue;
+                }
+              }
+              dd:last-child {
+                margin-right: 0;
+              }
+            }
+          }
+        }
+        li.divider {
+          float: left;
+          width: 80%;
+          margin-left: 20px;
+          border-top: 1px dotted $black;
+        }
+      }
+    }
+
+/* --------------------------
+  * News content
+  * -------------------------
+  */
+
+  ul.news {
+    list-style: none;
+
+    li.post {
+      width: 100%;
+      float: left;
+      clear: both;
+      margin-bottom: 30px;
+
+      .post-movement {
+        float: left;
+        margin-right: 10px;
+        width: 2%;
+      }
+
+      .post-data {
+        width: 96%;
+        float: left;
+        .post-title {
+          float: left;
+          .title {
+            font-weight: bolder;
+            float: left;
+            a {
+              color: $brick;
+            }
+            a:hover {
+              color: $green;
+            }
+            a:visited {
+              color: $cement;
+            }
+          }
+          .source {
+            float: left;
+            margin-left: 5px;
+            font-weight: lighter;
+            a {
+              color: $black;
+            }
+            a:hover {
+              color: $brick;
+              text-decoration: underline;
+            }
+          }
+        }
+        .post-meta {
+          font-size: smaller;
+          float: left;
+          clear: left;
+          @include cement;
+          .points-comments, .when-who {
+            float: left;
+            a {
+              color: $blue;
+            }
+            a:hover {
+              text-decoration: underline;
+            }
+          }
+          .when-who {
+            margin-left: 5px;
+          }
+        }
+    
+      }
+    }
+  }
+
+  .primary-content {
+    .news-nav {
+
+      .button {
+        margin-right: 10px;
+      }
+
+      .red.button {
+        @include red-back;
+        border: none;
+      }
+
+      .green.button {
+        @include green-back;
+        border: none;
+      }
+
+    }
+  }
+/* --------------------------
+  * Footer
+  * -------------------------
+  */
+
+    footer {
+      background-color: $taupe;
+      @include border-top(3px, $green);
+      @include thin-sans;
+      padding-top: 10px;
+      position: relative;
+      margin-top: -100px; /* negative value of footer height */
+      height: 100px;
+      clear:both;
+    }
+
